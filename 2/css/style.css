@@ -35,8 +35,7 @@ img {
 
 div span{
     position: absolute;
-    text-align: center;
+    top: 460px;
     left: 315px;
-    bottom: 445px;
     color: white;
 }
