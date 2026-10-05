@@ -47,6 +47,9 @@ nav{
     padding: 10px 20px;
     background-color: #f1f1f1;
     border-radius: 10px;
+    border:#333 solid 2px;
+    border-top: none;
+    border-left: none;
     text-align: center;
     transition: background-color 0.3s ease;
 }
@@ -66,6 +69,7 @@ footer {
     justify-content: center;    
     border-top: 1px solid #ccc;
     width: 100%;
+    margin-top: 10px;
 }
 
 footer p{
@@ -173,7 +177,66 @@ footer p{
     text-align: center;
 }
 
+.index-main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block{
+    display: flex;
+    margin: 20px 20px;
+}
+
+.static-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
 @media (max-width: 425px) {
+
+    .static-desc-block {
+        text-align: center;
+    }
+
+    .static-desc-block p{
+        margin: 0 10px 10px 10px;
+    }
+
+    .static-img-block{
+        margin: 0 10px;
+    }
+
+    .static-img-block img{
+        width: 100%;
+    }
+
+    .desc-block{
+        text-align: center;
+    }
+
+    .image-block{
+        display: none;
+    }
+
+    .index-main h2, .index-main p{
+        text-align: center;
+
+    }
+
+    .image-block-phone img{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-main img {
+        width: 100%;
+    }
+
     .step-2-info-main .info-div {
         width: 75%;
     }
@@ -209,13 +272,85 @@ footer p{
 }
 
 @media (min-width: 426px) {
-    .step-2-info-main .info-div, .step-2-info-main .img-div {
+
+    .static-info-group{
+        display: flex;
+        margin: 20px 0;
+        align-items: center;
+        justify-content: center;
+        /* border:#333 solid 1px; */
+    }
+
+    .static-img-block{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .static-img-block img{
+        width: 20em;
+        
+    }
+
+    .static-desc-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 25%;
+        padding-left: 15%;
+    }
+
+    .info-block {
+        display: flex;
+        width: 90%;
+        margin: 20px auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .desc-block {
+        width: 45%;
+        margin: 20px 0;
+    }
+
+    .image-block {
+        width: 45%;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .image-block img {
+        width: 100%;
+        height: auto;
+    }
+
+    .info-block .right {
+        text-align: right;
+    }
+
+    .img-right {
+        justify-content: flex-end;
+    }
+
+    .image-block-phone {
+        display: none;
+    }
+
+    .contact-main img {
+        width: 50%;
+    }
+
+    .step-2-info-main .info-div,
+    .step-2-info-main .img-div {
         width: 50%;
     }
 
     .step-2-info-main img {
         width: 75%;
     }
+
     #home, #static, #two-step, #contact {
         display: block;
     }
