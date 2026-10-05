@@ -2,6 +2,13 @@ body{
     margin: 0;
     background-color: #f1f1f1;
     font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
     
 }
 
@@ -45,7 +52,7 @@ nav{
 }
 
 .nav-list li:hover{
-    background-color: #5446d4;
+    background-color: #968aff;
 }
 
 .nav-list a{
@@ -58,8 +65,6 @@ footer {
     display: flex;
     justify-content: center;    
     border-top: 1px solid #ccc;
-    position: absolute;
-    bottom: 0;
     width: 100%;
 }
 
@@ -87,7 +92,102 @@ footer p{
     border-left: 1px solid #58c2ff;
 }
 
+.step-1-group, .step-2-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px 0 0;
+    padding: 0;    
+    list-style: none;
+    
+}
+
+.step-1-item, .step-2-item{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.step-1-item a,.step-2-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+.step-1-item div, .step-2-item div{
+    background-color: #58c2ff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border:#333 solid 2px;
+    border-top: none;
+    border-left: none;
+    cursor: pointer;
+}
+
+.step-1-item div:hover, .step-2-item div:hover{
+    transition: background-color 0.3s ease;
+    background-color: #9ddbf3;
+}
+
+.step-1-main, .step-2-main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-1-main p, .step-2-main p {
+    text-align: center;
+}
+
+.step-2-info-main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.step-2-info-main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.step-2-info-main h3 {
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.step-2-info-main .img-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-2-info-main .info-div{
+    text-align: center;
+}
+
 @media (max-width: 425px) {
+    .step-2-info-main .info-div {
+        width: 75%;
+    }
+    .step-2-info-main img {
+        width: 100%;
+    }
+    .step-1-group, .step-2-group {
+        width: 50%;
+    }
+
+    .step-1-item, .step-2-item {
+        width: 100%;
+    }
+
     #home, #static, #two-step, #contact {
         display: none;
     }
@@ -109,6 +209,13 @@ footer p{
 }
 
 @media (min-width: 426px) {
+    .step-2-info-main .info-div, .step-2-info-main .img-div {
+        width: 50%;
+    }
+
+    .step-2-info-main img {
+        width: 75%;
+    }
     #home, #static, #two-step, #contact {
         display: block;
     }
