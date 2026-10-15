@@ -1,0 +1,361 @@
+body{
+    margin: 0;
+    background-color: #f1f1f1;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+    
+}
+
+header{
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    padding-top: 20px;
+    background-color: #58c2ff;
+}
+
+h1{
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+nav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-list{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.nav-list li{
+    margin: 0 20px;
+    padding: 10px 20px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    border:#333 solid 2px;
+    border-top: none;
+    border-left: none;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav-list li:hover{
+    background-color: #968aff;
+}
+
+.nav-list a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+footer {
+    display: flex;
+    justify-content: center;    
+    border-top: 1px solid #ccc;
+    width: 100%;
+    margin-top: 10px;
+}
+
+footer p{
+    padding: 10px;
+}
+
+.contact-main{
+    text-align: center;
+    margin: 20px;
+}
+
+.contact-main input {
+    border-radius: 5px;
+}
+
+.submit-btn{
+    background-color: #58c2ff;
+    color: rgb(143, 142, 142);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-top: 1px solid #58c2ff;
+    border-left: 1px solid #58c2ff;
+}
+
+.step-1-group, .step-2-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0 0;
+    padding: 0;    
+    list-style: none;
+    
+}
+
+.step-1-item, .step-2-item{
+    margin: 20px 0;
+    text-align: center;
+}
+
+.step-1-item a,.step-2-item a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+
+}
+
+.step-1-item div, .step-2-item div{
+    background-color: #58c2ff;
+    padding: 30px 20px;
+    border-radius: 10px;
+    border:#333 solid 2px;
+    border-top: none;
+    border-left: none;
+    cursor: pointer;
+}
+
+.step-1-item div:hover, .step-2-item div:hover{
+    transition: background-color 0.3s ease;
+    background-color: #9ddbf3;
+}
+
+.step-1-main, .step-2-main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-1-main p, .step-2-main p {
+    text-align: center;
+}
+
+.step-2-info-main {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.step-2-info-main h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.step-2-info-main h3 {
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.step-2-info-main .img-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-2-info-main .info-div{
+    text-align: center;
+}
+
+.index-main{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-block{
+    display: flex;
+    margin: 20px 20px;
+}
+
+.static-main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+@media (max-width: 425px) {
+
+    .static-desc-block {
+        text-align: center;
+    }
+
+    .static-desc-block p{
+        margin: 0 10px 10px 10px;
+    }
+
+    .static-img-block{
+        margin: 0 10px;
+    }
+
+    .static-img-block img{
+        width: 100%;
+    }
+
+    .desc-block{
+        text-align: center;
+    }
+
+    .image-block{
+        display: none;
+    }
+
+    .index-main h2, .index-main p{
+        text-align: center;
+
+    }
+
+    .image-block-phone img{
+        width: 100%;
+        justify-content: center;
+    }
+
+    .contact-main img {
+        width: 100%;
+    }
+
+    .step-2-info-main .info-div {
+        width: 75%;
+    }
+    .step-2-info-main img {
+        width: 100%;
+    }
+    .step-1-group, .step-2-group {
+        width: 50%;
+    }
+
+    .step-1-item, .step-2-item {
+        width: 100%;
+    }
+
+    #home, #static, #two-step, #contact {
+        display: none;
+    }
+
+    #home-icon, #static-icon, #two-step-icon, #contact-icon {
+        display: block;
+    }
+
+    #home-icon img, #static-icon img, #two-step-icon img, #contact-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .nav-list li {
+        /* margin: 0px 10px; */
+        padding: 10px;
+    }
+    
+}
+
+@media (min-width: 426px) {
+
+    .static-info-group{
+        display: flex;
+        margin: 20px 0;
+        align-items: center;
+        justify-content: center;
+        /* border:#333 solid 1px; */
+    }
+
+    .static-img-block{
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+
+    .static-img-block img{
+        width: 20em;
+        
+    }
+
+    .static-desc-block{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 25%;
+        padding-left: 15%;
+    }
+
+    .info-block {
+        display: flex;
+        width: 90%;
+        margin: 20px auto;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .desc-block {
+        width: 45%;
+        margin: 20px 0;
+    }
+
+    .image-block {
+        width: 45%;
+        margin: 20px 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .image-block img {
+        width: 100%;
+        height: auto;
+    }
+
+    .info-block .right {
+        text-align: right;
+    }
+
+    .img-right {
+        justify-content: flex-end;
+    }
+
+    .image-block-phone {
+        display: none;
+    }
+
+    .contact-main img {
+        width: 50%;
+    }
+
+    .step-2-info-main .info-div,
+    .step-2-info-main .img-div {
+        width: 50%;
+    }
+
+    .step-2-info-main img {
+        width: 75%;
+    }
+
+    #home, #static, #two-step, #contact {
+        display: block;
+    }
+
+    #home-icon, #static-icon, #two-step-icon, #contact-icon {
+        display: none;
+    }
+}
