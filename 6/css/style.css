@@ -112,7 +112,7 @@ footer p{
     text-align: center;
 }
 
-.step-1-item a,.step-2-item a{
+.step-1-item div,.step-2-item div{
     text-decoration: none;
     color: black;
     font-weight: bold;
