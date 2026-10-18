@@ -13,28 +13,28 @@
         "nonhubPorts":{
             "one":{
                 "name":"Abilene Regional Airport (ABI)",
-                "image":"../../../../img/AbileneRegionalAirport.jpg",
+                "image":"./img/AbileneRegionalAirport.jpg",
                 "imageDesc":"Above: Abilene Regional Airport",
                 "portInfo1":"Abilene Regional Airport (ABI) is a public airport located in Abilene, Texas, serving the Abilene area and surrounding communities. The airport provides regional air service and connects travelers to larger airports and major destinations across the United States.",
                 "portInfo2":"ABI has a single terminal with several passenger amenities, including rental car services, parking, and comfortable waiting areas. The airport serves as an important transportation hub for the Abilene region and provides convenient access to the city and surrounding areas."
             },
             "two":{
                 "name":"Southwest Georgia Regional Airport (ABY)",
-                "image":"../../../../img/SouthwestGeorgiaRegionalAirport.png",
+                "image":"./img/SouthwestGeorgiaRegionalAirport.png",
                 "imageDesc":"Above: Southwest Georgia Regional Airport",
                 "portInfo1":"Southwest Georgia Regional Airport (ABY) is a public airport located in Albany, Georgia, serving Albany and communities throughout southwestern Georgia. The airport provides regional passenger service and connects travelers to larger transportation hubs and destinations across the United States.",
                 "portInfo2":"ABY features a passenger terminal with amenities such as rental car services, parking, and comfortable waiting areas. The airport plays an important role in connecting southwestern Georgia to the national air transportation system."
             },
             "three":{
                 "name":"Alexandria International Airport (AEX)",
-                "image":"../../../../img/AlexandriaInternationalAirport.jpg",
+                "image":"./img/AlexandriaInternationalAirport.jpg",
                 "imageDesc":"Above: Alexandria International Airport",
                 "portInfo1":"Alexandria International Airport (AEX) is a public airport located in Alexandria, Louisiana, serving central Louisiana and the surrounding communities. The airport provides commercial passenger service and connects travelers to larger airports and destinations throughout the United States.",
                 "portInfo2":"AEX has a passenger terminal with amenities for travelers, including rental car services, parking, and comfortable waiting areas. The airport also supports general aviation and serves as an important transportation facility for central Louisiana."
             },
             "four":{
                 "name":"Key West International Airport (EYW)",
-                "image":"../../../../img/KeyWestInternationalAirport.png",
+                "image":"./img/KeyWestInternationalAirport.png",
                 "imageDesc":"Above: Key West International Airport",
                 "portInfo1":"Key West International Airport (EYW) is a public airport located on the island of Key West, Florida, serving Key West and the surrounding Florida Keys. The airport offers domestic flights to several major cities and provides an important connection between the Florida Keys and the mainland.",
                 "portInfo2":"EYW has a compact passenger terminal with dining options, retail services, rental cars, and passenger facilities. Its location makes the airport an important gateway for tourists visiting Key West and the surrounding islands."
@@ -47,28 +47,28 @@
         "smallPorts":{
             "one":{
                 "name":"Greenville-Spartanburg International Airport (GSP)",
-                "image":"../../../../img/Greenville-SpartanburgAirport.jpg",
+                "image":"./img/Greenville-SpartanburgAirport.jpg",
                 "imageDesc":"Above: Greenville-Spartanburg International Airport",
                 "portInfo1":"Greenville-Spartanburg International Airport (GSP) is a public airport located in Greer, South Carolina, serving the Greenville-Spartanburg area. It is the largest airport in the Upstate region of South Carolina and offers a range of domestic flights to major cities across the United States.",
                 "portInfo2":"GSP has a single terminal with multiple gates and amenities for travelers, including dining options, retail shops, and car rental services. The airport is known for its efficient operations and friendly staff, making it a convenient choice for travelers in the region."
             },
             "two":{
                 "name":"Birmingham-Shuttlesworth International Airport (BHM)",
-                "image":"../../../../img/Birmingham-ShuttlesworthInternationalAirport.png",
+                "image":"./img/Birmingham-ShuttlesworthInternationalAirport.png",
                 "imageDesc":"Above: Birmingham-Shuttlesworth International Airport",
                 "portInfo1":"Birmingham-Shuttlesworth International Airport (BHM) is a public airport located in Birmingham, Alabama, serving the Birmingham metropolitan area and central Alabama. It offers domestic flights to major cities throughout the United States and is the busiest commercial airport in the state.",
                 "portInfo2":"BHM has a modern passenger terminal with multiple concourses, dining options, retail shops, rental car services, and parking. The airport provides an important connection for business and leisure travelers throughout central Alabama."
             },
             "three":{
                 "name":"Corpus Christi International Airport (CRP)",
-                "image":"../../../../img/CorpusChristiInternationalAirport.png",
+                "image":"./img/CorpusChristiInternationalAirport.png",
                 "imageDesc":"Above: Corpus Christi International Airport",
                 "portInfo1":"Corpus Christi International Airport (CRP) is a public airport located in Corpus Christi, Texas, serving the coastal region of South Texas. The airport provides regional passenger service and connects travelers to larger airports and destinations throughout the United States.",
                 "portInfo2":"CRP has a passenger terminal with dining options, rental car services, parking, and other traveler amenities. The airport is an important transportation hub for Corpus Christi and the surrounding coastal communities."
             },
             "four":{
                 "name":"Gulfport-Biloxi International Airport (GPT)",
-                "image":"../../../../img/Gulfport-BiloxiInternationalAirport.jpg",
+                "image":"./img/Gulfport-BiloxiInternationalAirport.jpg",
                 "imageDesc":"Above: Gulfport-Biloxi International Airport",
                 "portInfo1":"Gulfport-Biloxi International Airport (GPT) is a public airport located in Gulfport, Mississippi, serving the Mississippi Gulf Coast and nearby communities. The airport offers domestic flights to major cities and provides convenient air service for both residents and visitors to the region.",
                 "portInfo2":"GPT has a passenger terminal with dining and retail options, rental car services, parking, and other traveler amenities. The airport is an important gateway for visitors traveling to Gulfport, Biloxi, and the surrounding Gulf Coast."
@@ -81,28 +81,28 @@
         "mediumPorts":{
             "one":{
                 "name":"Austin-Bergstrom International Airport (AUS)",
-                "image":"../../../../img/Austin-BergstromInternationalAirport.jpg",
+                "image":"./img/Austin-BergstromInternationalAirport.jpg",
                 "imageDesc":"Above: Austin-Bergstrom International Airport",
                 "portInfo1":"Austin-Bergstrom International Airport (AUS) is a public airport located in Austin, Texas, serving the Austin metropolitan area and central Texas. It offers numerous domestic and international flights to destinations across the United States, Mexico, Canada, and other locations.",
                 "portInfo2":"AUS has multiple passenger facilities featuring restaurants, retail shops, rental car services, and other amenities. The airport is a major transportation hub for central Texas and supports the growing travel needs of the Austin area."
             },
             "two":{
                 "name":"Jacksonville International Airport (JAX)",
-                "image":"../../../../img/JacksonvilleInternationalAirport.jpg",
+                "image":"./img/JacksonvilleInternationalAirport.jpg",
                 "imageDesc":"Above: Jacksonville International Airport",
                 "portInfo1":"Jacksonville International Airport (JAX) is a public airport located in Jacksonville, Florida, serving northeastern Florida and southeastern Georgia. The airport offers domestic and international flights to numerous destinations and is an important transportation hub for the region.",
                 "portInfo2":"JAX has a modern passenger terminal with multiple concourses, dining options, retail shops, rental car services, and parking. The airport provides convenient access to Jacksonville and the surrounding communities for both business and leisure travelers."
             },
             "three":{
                 "name":"Louis Armstrong New Orleans International Airport (MSY)",
-                "image":"../../../../img/LouisArmstrongNewOrleansInternationalAirport.jpg",
+                "image":"./img/LouisArmstrongNewOrleansInternationalAirport.jpg",
                 "imageDesc":"Above: Louis Armstrong New Orleans International Airport",
                 "portInfo1":"Louis Armstrong New Orleans International Airport (MSY) is a public airport located in Kenner, Louisiana, serving the New Orleans metropolitan area and southeastern Louisiana. It offers numerous domestic and international flights and is the primary commercial airport serving the New Orleans region.",
                 "portInfo2":"MSY has a modern terminal complex with multiple concourses, restaurants, retail shops, rental car services, and other amenities. The airport serves as an important gateway for travelers visiting New Orleans and the surrounding Gulf Coast."
             },
             "four":{
                 "name":"Dallas Love Field (DAL)",
-                "image":"../../../../img/DallasLoveField.webp",
+                "image":"./img/DallasLoveField.webp",
                 "imageDesc":"Above: Dallas Love Field",
                 "portInfo1":"Dallas Love Field (DAL) is a public airport located in Dallas, Texas, serving the Dallas-Fort Worth metropolitan area. The airport is primarily served by Southwest Airlines and provides domestic flights to destinations throughout the United States.",
                 "portInfo2":"DAL has a single modern terminal with multiple gates, restaurants, retail shops, rental car services, and parking facilities. Its location near downtown Dallas makes it a convenient option for travelers visiting the city and surrounding areas."
@@ -115,28 +115,28 @@
         "largePorts":{
             "one":{
                 "name":"Hartsfield-Jackson Atlanta International Airport (ATL)",
-                "image":"../../../../img/Hartsfield-JacksonAtlantaInternationalAirport.jpg",
+                "image":"./img/Hartsfield-JacksonAtlantaInternationalAirport.jpg",
                 "imageDesc":"Above: Hartsfield-Jackson Atlanta International Airport",
                 "portInfo1":"Hartsfield-Jackson Atlanta International Airport (ATL) is a major international airport located in Atlanta, Georgia, serving the Atlanta metropolitan area and much of the southeastern United States. It is one of the world's busiest airports and provides flights to destinations throughout the United States and around the globe.",
                 "portInfo2":"ATL has multiple concourses connected by an efficient transportation system and offers numerous restaurants, shops, rental car services, and passenger amenities. The airport serves as a major hub for domestic and international air travel."
             },
             "two":{
                 "name":"Orlando International Airport (MCO)",
-                "image":"../../../../img/OrlandoInternationalAirport.jpg",
+                "image":"./img/OrlandoInternationalAirport.jpg",
                 "imageDesc":"Above: Orlando International Airport",
                 "portInfo1":"Orlando International Airport (MCO) is a major public airport located in Orlando, Florida, serving central Florida and the greater Orlando metropolitan area. It offers numerous domestic and international flights and is a major gateway for visitors traveling to the region's popular attractions.",
                 "portInfo2":"MCO has a large terminal complex with multiple concourses, restaurants, retail stores, rental car services, and other traveler amenities. The airport plays an important role in supporting Orlando's tourism industry and growing population."
             },
             "three":{
                 "name":"Tampa International Airport (TPA)",
-                "image":"../../../../img/TampaInternationalAirport.jpg",
+                "image":"./img/TampaInternationalAirport.jpg",
                 "imageDesc":"Above: Tampa International Airport",
                 "portInfo1":"Tampa International Airport (TPA) is a public airport located in Tampa, Florida, serving the Tampa Bay region and surrounding communities. The airport offers domestic and international flights to numerous destinations and is an important transportation hub for western Florida.",
                 "portInfo2":"TPA is known for its convenient terminal design and features restaurants, retail shops, rental car services, parking, and other passenger amenities. The airport serves millions of travelers visiting Tampa and the surrounding Gulf Coast region."
             },
             "four":{
                 "name":"Dallas/Fort Worth International Airport (DFW)",
-                "image":"../../../../img/Dallas-FortWorthInternationalAirport.webp",
+                "image":"./img/Dallas-FortWorthInternationalAirport.webp",
                 "imageDesc":"Above: Dallas/Fort Worth International Airport",
                 "portInfo1":"Dallas/Fort Worth International Airport (DFW) is a major international airport located between Dallas and Fort Worth, Texas, serving the Dallas-Fort Worth metropolitan area. It offers flights to destinations throughout the United States and around the world and is one of the largest airports in the country.",
                 "portInfo2":"DFW has multiple terminals connected by an airport transportation system and provides extensive dining, shopping, rental car, and passenger services. The airport is a major hub for American Airlines and an important center for domestic and international travel."
