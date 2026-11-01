@@ -1,9 +1,26 @@
 'use strict';
 
+import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
+import { getFirestore, collection, getDocs, getDoc, doc } from 'firebase/firestore/lite';
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyAyxaszGW2VDLQTuj0aJYzqJK7vca4HUno",
+    authDomain: "csci-3054-project.firebaseapp.com",
+    projectId: "csci-3054-project",
+    storageBucket: "csci-3054-project.firebasestorage.app",
+    messagingSenderId: "1054522318125",
+    appId: "1:1054522318125:web:6b01b8dde65c23e7e747a4"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
 async function onStart(){
-    let response = await fetch('./js/airportData.json');
-    let data = await response.json();
-    let start = data.twoStepStart
+    const twoStep = await getDoc(doc(db, "airportData", "twoStepStart"));
+
+    const start = twoStep.data();
 
     let heading = document.querySelector("h2");
     heading.textContent = start.startTitle;
@@ -12,20 +29,12 @@ async function onStart(){
     desc.textContent = start.startDesc;
 
     let buttons = document.querySelectorAll(".step-1-item div");
-    for(let i = 0; i < buttons.length; i++){
-        if(i == 0){
-            buttons[i].textContent = start.nonHubLabel;
-        }
-        if(i == 1){
-            buttons[i].textContent = start.smallLabel;
-        }
-        if(i == 2){
-            buttons[i].textContent = start.mediumLabel;
-        }
-        if(i == 3){
-            buttons[i].textContent = start.largeLabel;
-        }
-    }
+    
+    buttons[0].textContent = start.nonHubLabel;
+    buttons[1].textContent = start.smallLabel;
+    buttons[2].textContent = start.mediumLabel;
+    buttons[3].textContent = start.largeLabel;
+
 }
 
 window.addEventListener("DOMContentLoaded", onStart);
