@@ -1,7 +1,7 @@
 'use strict';
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-import { getFirestore, collection, getDocs, getDoc, doc } from 'firebase/firestore/lite';
+import { getFirestore, collection, getDocs, getDoc, doc } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore-lite.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -17,28 +17,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-async function onStart(){
-    const twoStep = await getDoc(doc(db, "airportData", "twoStepStart"));
-
-    const start = twoStep.data();
-
-    let heading = document.querySelector("h2");
-    heading.textContent = start.startTitle;
-
-    let desc = document.querySelector("main p");
-    desc.textContent = start.startDesc;
-
-    let buttons = document.querySelectorAll(".step-1-item div");
-    
-    buttons[0].textContent = start.nonHubLabel;
-    buttons[1].textContent = start.smallLabel;
-    buttons[2].textContent = start.mediumLabel;
-    buttons[3].textContent = start.largeLabel;
-
-}
-
-window.addEventListener("DOMContentLoaded", onStart);
-
 let sizeChosen = false;
 let nonhubChoice = false;
 let smallChoice = false;
@@ -47,32 +25,39 @@ let largeChoice = false;
 
 //thinking of having many booleans to aid logic for how to show airport details. add bool for each size
 //  if sizechosen == true, display details according to what size bool is true
+const nonhub = await getDoc(doc(db, "airportData", "nonhub"));
+const small = await getDoc(doc(db, "airportData", "small"));
+const medium = await getDoc(doc(db, "airportData", "medium"));
+const large = await getDoc(doc(db, "airportData", "large"));
+
+const nonhubData = nonhub.data();
+const smallData = small.data();
+const mediumData = medium.data();
+const largeData = large.data();
 let buttons = document.querySelectorAll(".step-1-item div");
 buttons[0].addEventListener("click", async () => { //nonhub button then first sub choice button
-    let response = await fetch('./js/airportData.json');
-    let data = await response.json();
-    let nonhub = data.nonhub;
+    
 
     if(!sizeChosen){
         let heading = document.querySelector("h2");
-        heading.textContent = nonhub.nonhubTitle;
+        heading.textContent = nonhubData.nonhubTitle;
 
         let desc = document.querySelector("main p");
-        desc.textContent = nonhub.nonhubDesc;
+        desc.textContent = nonhubData.nonhubDesc;
 
-        let nonhubPorts = nonhub.nonhubPorts;
+        let nonhubPorts = nonhubData.nonhubPorts;
         for(let i = 0; i < buttons.length; i++){
             if(i == 0){
-                buttons[i].textContent = nonhubPorts.one.name;
+                buttons[i].textContent = nonhubPorts[i].name;
             }
             if(i == 1){
-                buttons[i].textContent = nonhubPorts.two.name;
+                buttons[i].textContent = nonhubPorts[i].name;
             }
             if(i == 2){
-                buttons[i].textContent = nonhubPorts.three.name;
+                buttons[i].textContent = nonhubPorts[i].name;
             }
             if(i == 3){
-                buttons[i].textContent = nonhubPorts.four.name;
+                buttons[i].textContent = nonhubPorts[i].name;
             }
         }
         sizeChosen = !sizeChosen;
@@ -106,63 +91,60 @@ buttons[0].addEventListener("click", async () => { //nonhub button then first su
 
 
         if(nonhubChoice){
-            heading.textContent = nonhub.nonhubPorts.one.name;
-            image.setAttribute("src", nonhub.nonhubPorts.one.image);
-            image.setAttribute("alt", nonhub.nonhubPorts.one.name);
-            imgDesc.textContent = nonhub.nonhubPorts.one.imageDesc;
-            info1.textContent = nonhub.nonhubPorts.one.portInfo1;
-            info2.textContent = nonhub.nonhubPorts.one.portInfo2;
+            heading.textContent = nonhubData.nonhubPorts[0].name;
+            image.setAttribute("src", nonhubData.nonhubPorts[0].image);
+            image.setAttribute("alt", nonhubData.nonhubPorts[0].name);
+            imgDesc.textContent = nonhubData.nonhubPorts[0].imageDesc;
+            info1.textContent = nonhubData.nonhubPorts[0].portInfo1;
+            info2.textContent = nonhubData.nonhubPorts[0].portInfo2;
         }else if(smallChoice){
-            heading.textContent = data.small.smallPorts.one.name;
-            image.setAttribute("src", data.small.smallPorts.one.image);
-            image.setAttribute("alt", data.small.smallPorts.one.name);
-            imgDesc.textContent = data.small.smallPorts.one.imageDesc;
-            info1.textContent = data.small.smallPorts.one.portInfo1;
-            info2.textContent = data.small.smallPorts.one.portInfo2;
+            heading.textContent = smallData.smallPorts[0].name;
+            image.setAttribute("src", smallData.smallPorts[0].image);
+            image.setAttribute("alt", smallData.smallPorts[0].name);
+            imgDesc.textContent = smallData.smallPorts[0].imageDesc;
+            info1.textContent = smallData.smallPorts[0].portInfo1;
+            info2.textContent = smallData.smallPorts[0].portInfo2;
         }else if(mediumChoice){
-            heading.textContent = data.medium.mediumPorts.one.name;
-            image.setAttribute("src", data.medium.mediumPorts.one.image);
-            image.setAttribute("alt", data.medium.mediumPorts.one.name);
-            imgDesc.textContent = data.medium.mediumPorts.one.imageDesc;
-            info1.textContent = data.medium.mediumPorts.one.portInfo1;
-            info2.textContent = data.medium.mediumPorts.one.portInfo2;
+            heading.textContent = mediumData.mediumPorts[0].name;
+            image.setAttribute("src", mediumData.mediumPorts[0].image);
+            image.setAttribute("alt", mediumData.mediumPorts[0].name);
+            imgDesc.textContent = mediumData.mediumPorts[0].imageDesc;
+            info1.textContent = mediumData.mediumPorts[0].portInfo1;
+            info2.textContent = mediumData.mediumPorts[0].portInfo2;
         }else if(largeChoice){
-            heading.textContent = data.large.largePorts.one.name;
-            image.setAttribute("src", data.large.largePorts.one.image);
-            image.setAttribute("alt", data.large.largePorts.one.name);
-            imgDesc.textContent = data.large.largePorts.one.imageDesc;
-            info1.textContent = data.large.largePorts.one.portInfo1;
-            info2.textContent = data.large.largePorts.one.portInfo2;
+            heading.textContent = largeData.largePorts[0].name;
+            image.setAttribute("src", largeData.largePorts[0].image);
+            image.setAttribute("alt", largeData.largePorts[0].name);
+            imgDesc.textContent = largeData.largePorts[0].imageDesc;
+            info1.textContent = largeData.largePorts[0].portInfo1;
+            info2.textContent = largeData.largePorts[0].portInfo2;
         }
     }
     
 });
 
 buttons[1].addEventListener("click", async () => { //small hub button then second sub choice button 
-    let response = await fetch('./js/airportData.json');
-    let data = await response.json();
-    let small = data.small;
 
     if(!sizeChosen){
         let heading = document.querySelector("h2");
-        heading.textContent = small.smallTitle;
+        heading.textContent = smallData.smallTitle;
 
         let desc = document.querySelector("main p");
-        desc.textContent = small.smallDesc;
+        desc.textContent = smallData.smallDesc;
 
-        let smallPorts = small.smallPorts;
+        let smallPorts = smallData.smallPorts;
         for(let i = 0; i < buttons.length; i++){
             if(i == 0){
-                buttons[i].textContent = smallPorts.one.name;
+                buttons[i].textContent = smallPorts[i].name;
             }
             if(i == 1){
-                buttons[i].textContent = smallPorts.two.name;
+                buttons[i].textContent = smallPorts[i].name;
             }
             if(i == 2){
-                buttons[i].textContent = smallPorts.three.name;
+                buttons[i].textContent = smallPorts[i].name;
             }
             if(i == 3){
-                buttons[i].textContent = smallPorts.four.name;
+                buttons[i].textContent = smallPorts[i].name;
             }
         }
         sizeChosen = !sizeChosen;
@@ -196,62 +178,59 @@ buttons[1].addEventListener("click", async () => { //small hub button then secon
 
 
         if(nonhubChoice){
-            heading.textContent = data.nonhub.nonhubPorts.two.name;
-            image.setAttribute("src", data.nonhub.nonhubPorts.two.image);
-            image.setAttribute("alt", data.nonhub.nonhubPorts.two.name);
-            imgDesc.textContent = data.nonhub.nonhubPorts.two.imageDesc;
-            info1.textContent = data.nonhub.nonhubPorts.two.portInfo1;
-            info2.textContent = data.nonhub.nonhubPorts.two.portInfo2;
+            heading.textContent = nonhubData.nonhubPorts[1].name;
+            image.setAttribute("src", nonhubData.nonhubPorts[1].image);
+            image.setAttribute("alt", nonhubData.nonhubPorts[1].name);
+            imgDesc.textContent = nonhubData.nonhubPorts[1].imageDesc;
+            info1.textContent = nonhubData.nonhubPorts[1].portInfo1;
+            info2.textContent = nonhubData.nonhubPorts[1].portInfo2;
         }else if(smallChoice){
-            heading.textContent = small.smallPorts.two.name;
-            image.setAttribute("src", small.smallPorts.two.image);
-            image.setAttribute("alt", small.smallPorts.two.name);
-            imgDesc.textContent = small.smallPorts.two.imageDesc;
-            info1.textContent = small.smallPorts.two.portInfo1;
-            info2.textContent = small.smallPorts.two.portInfo2;
+            heading.textContent = smallData.smallPorts[1].name;
+            image.setAttribute("src", smallData.smallPorts[1].image);
+            image.setAttribute("alt", smallData.smallPorts[1].name);
+            imgDesc.textContent = smallData.smallPorts[1].imageDesc;
+            info1.textContent = smallData.smallPorts[1].portInfo1;
+            info2.textContent = smallData.smallPorts[1].portInfo2;
         }else if(mediumChoice){
-            heading.textContent = data.medium.mediumPorts.two.name;
-            image.setAttribute("src", data.medium.mediumPorts.two.image);
-            image.setAttribute("alt", data.medium.mediumPorts.two.name);
-            imgDesc.textContent = data.medium.mediumPorts.two.imageDesc;
-            info1.textContent = data.medium.mediumPorts.two.portInfo1;
-            info2.textContent = data.medium.mediumPorts.two.portInfo2;
+            heading.textContent = mediumData.mediumPorts[1].name;
+            image.setAttribute("src", mediumData.mediumPorts[1].image);
+            image.setAttribute("alt", mediumData.mediumPorts[1].name);
+            imgDesc.textContent = mediumData.mediumPorts[1].imageDesc;
+            info1.textContent = mediumData.mediumPorts[1].portInfo1;
+            info2.textContent = mediumData.mediumPorts[1].portInfo2;
         }else if(largeChoice){
-            heading.textContent = data.large.largePorts.two.name;
-            image.setAttribute("src", data.large.largePorts.two.image);
-            image.setAttribute("alt", data.large.largePorts.two.name);
-            imgDesc.textContent = data.large.largePorts.two.imageDesc;
-            info1.textContent = data.large.largePorts.two.portInfo1;
-            info2.textContent = data.large.largePorts.two.portInfo2;
+            heading.textContent = largeData.largePorts[1].name;
+            image.setAttribute("src", largeData.largePorts[1].image);
+            image.setAttribute("alt", largeData.largePorts[1].name);
+            imgDesc.textContent = largeData.largePorts[1].imageDesc;
+            info1.textContent = largeData.largePorts[1].portInfo1;
+            info2.textContent = largeData.largePorts[1].portInfo2;
         }
     }
 });
 
 buttons[2].addEventListener("click", async () => { //medium hub button then third sub choice button 
-    let response = await fetch('./js/airportData.json');
-    let data = await response.json();
-    let medium = data.medium;
 
     if(!sizeChosen){
         let heading = document.querySelector("h2");
-        heading.textContent = medium.mediumTitle;
+        heading.textContent = mediumData.mediumTitle;
 
         let desc = document.querySelector("main p");
-        desc.textContent = medium.mediumDesc;
+        desc.textContent = mediumData.mediumDesc;
 
-        let mediumPorts = medium.mediumPorts;
+        let mediumPorts = mediumData.mediumPorts;
         for(let i = 0; i < buttons.length; i++){
             if(i == 0){
-                buttons[i].textContent = mediumPorts.one.name;
+                buttons[i].textContent = mediumPorts[i].name;
             }
             if(i == 1){
-                buttons[i].textContent = mediumPorts.two.name;
+                buttons[i].textContent = mediumPorts[i].name;
             }
             if(i == 2){
-                buttons[i].textContent = mediumPorts.three.name;
+                buttons[i].textContent = mediumPorts[i].name;
             }
             if(i == 3){
-                buttons[i].textContent = mediumPorts.four.name;
+                buttons[i].textContent = mediumPorts[i].name;
             }
         }
         sizeChosen = !sizeChosen;
@@ -285,62 +264,59 @@ buttons[2].addEventListener("click", async () => { //medium hub button then thir
 
 
         if(nonhubChoice){
-            heading.textContent = data.nonhub.nonhubPorts.three.name;
-            image.setAttribute("src", data.nonhub.nonhubPorts.three.image);
-            image.setAttribute("alt", data.nonhub.nonhubPorts.three.name);
-            imgDesc.textContent = data.nonhub.nonhubPorts.three.imageDesc;
-            info1.textContent = data.nonhub.nonhubPorts.three.portInfo1;
-            info2.textContent = data.nonhub.nonhubPorts.three.portInfo2;
+            heading.textContent = nonhubData.nonhubPorts[2].name;
+            image.setAttribute("src", nonhubData.nonhubPorts[2].image);
+            image.setAttribute("alt", nonhubData.nonhubPorts[2].name);
+            imgDesc.textContent = nonhubData.nonhubPorts[2].imageDesc;
+            info1.textContent = nonhubData.nonhubPorts[2].portInfo1;
+            info2.textContent = nonhubData.nonhubPorts[2].portInfo2;
         }else if(smallChoice){
-            heading.textContent = data.small.smallPorts.three.name;
-            image.setAttribute("src", data.small.smallPorts.three.image);
-            image.setAttribute("alt", data.small.smallPorts.three.name);
-            imgDesc.textContent = data.small.smallPorts.three.imageDesc;
-            info1.textContent = data.small.smallPorts.three.portInfo1;
-            info2.textContent = data.small.smallPorts.three.portInfo2;
+            heading.textContent = smallData.smallPorts[2].name;
+            image.setAttribute("src", smallData.smallPorts[2].image);
+            image.setAttribute("alt", smallData.smallPorts[2].name);
+            imgDesc.textContent = smallData.smallPorts[2].imageDesc;
+            info1.textContent = smallData.smallPorts[2].portInfo1;
+            info2.textContent = smallData.smallPorts[2].portInfo2;
         }else if(mediumChoice){
-            heading.textContent = medium.mediumPorts.three.name;
-            image.setAttribute("src", medium.mediumPorts.three.image);
-            image.setAttribute("alt", medium.mediumPorts.three.name);
-            imgDesc.textContent = medium.mediumPorts.three.imageDesc;
-            info1.textContent = medium.mediumPorts.three.portInfo1;
-            info2.textContent = medium.mediumPorts.three.portInfo2;
+            heading.textContent = mediumData.mediumPorts[2].name;
+            image.setAttribute("src", mediumData.mediumPorts[2].image);
+            image.setAttribute("alt", mediumData.mediumPorts[2].name);
+            imgDesc.textContent = mediumData.mediumPorts[2].imageDesc;
+            info1.textContent = mediumData.mediumPorts[2].portInfo1;
+            info2.textContent = mediumData.mediumPorts[2].portInfo2;
         }else if(largeChoice){
-            heading.textContent = data.large.largePorts.three.name;
-            image.setAttribute("src", data.large.largePorts.three.image);
-            image.setAttribute("alt", data.large.largePorts.three.name);
-            imgDesc.textContent = data.large.largePorts.three.imageDesc;
-            info1.textContent = data.large.largePorts.three.portInfo1;
-            info2.textContent = data.large.largePorts.three.portInfo2;
+            heading.textContent = largeData.largePorts[2].name;
+            image.setAttribute("src", largeData.largePorts[2].image);
+            image.setAttribute("alt", largeData.largePorts[2].name);
+            imgDesc.textContent = largeData.largePorts[2].imageDesc;
+            info1.textContent = largeData.largePorts[2].portInfo1;
+            info2.textContent = largeData.largePorts[2].portInfo2;
         }
     }
 });
 
 buttons[3].addEventListener("click", async () => { //large hub button then fourth sub choice button 
-    let response = await fetch('./js/airportData.json');
-    let data = await response.json();
-    let large = data.large;
 
     if(!sizeChosen){
         let heading = document.querySelector("h2");
-        heading.textContent = large.largeTitle;
+        heading.textContent = largeData.largeTitle;
 
         let desc = document.querySelector("main p");
-        desc.textContent = large.largeDesc;
+        desc.textContent = largeData.largeDesc;
 
-        let largePorts = large.largePorts;
+        let largePorts = largeData.largePorts;
         for(let i = 0; i < buttons.length; i++){
             if(i == 0){
-                buttons[i].textContent = largePorts.one.name;
+                buttons[i].textContent = largePorts[i].name;
             }
             if(i == 1){
-                buttons[i].textContent = largePorts.two.name;
+                buttons[i].textContent = largePorts[i].name;
             }
             if(i == 2){
-                buttons[i].textContent = largePorts.three.name;
+                buttons[i].textContent = largePorts[i].name;
             }
             if(i == 3){
-                buttons[i].textContent = largePorts.four.name;
+                buttons[i].textContent = largePorts[i].name;
             }
         }
         sizeChosen = !sizeChosen;
@@ -374,33 +350,34 @@ buttons[3].addEventListener("click", async () => { //large hub button then fourt
 
 
         if(nonhubChoice){
-            heading.textContent = data.nonhub.nonhubPorts.four.name;
-            image.setAttribute("src", data.nonhub.nonhubPorts.four.image);
-            image.setAttribute("alt", data.nonhub.nonhubPorts.four.name);
-            imgDesc.textContent = data.nonhub.nonhubPorts.four.imageDesc;
-            info1.textContent = data.nonhub.nonhubPorts.four.portInfo1;
-            info2.textContent = data.nonhub.nonhubPorts.four.portInfo2;
+            heading.textContent = nonhubData.nonhubPorts[3].name;
+            image.setAttribute("src", nonhubData.nonhubPorts[3].image);
+            image.setAttribute("alt", nonhubData.nonhubPorts[3].name);
+            imgDesc.textContent = nonhubData.nonhubPorts[3].imageDesc;
+            info1.textContent = nonhubData.nonhubPorts[3].portInfo1;
+            info2.textContent = nonhubData.nonhubPorts[3].portInfo2;
         }else if(smallChoice){
-            heading.textContent = data.small.smallPorts.four.name;
-            image.setAttribute("src", data.small.smallPorts.four.image);
-            image.setAttribute("alt", data.small.smallPorts.four.name);
-            imgDesc.textContent = data.small.smallPorts.four.imageDesc;
-            info1.textContent = data.small.smallPorts.four.portInfo1;
-            info2.textContent = data.small.smallPorts.four.portInfo2;
+            heading.textContent = smallData.smallPorts[3].name;
+            image.setAttribute("src", smallData.smallPorts[3].image);
+            image.setAttribute("alt", smallData.smallPorts[3].name);
+            imgDesc.textContent = smallData.smallPorts[3].imageDesc;
+            info1.textContent = smallData.smallPorts[3].portInfo1;
+            info2.textContent = smallData.smallPorts[3].portInfo2;
         }else if(mediumChoice){
-            heading.textContent = data.medium.mediumPorts.four.name;
-            image.setAttribute("src", data.medium.mediumPorts.four.image);
-            image.setAttribute("alt", data.medium.mediumPorts.four.name);
-            imgDesc.textContent = data.medium.mediumPorts.four.imageDesc;
-            info1.textContent = data.medium.mediumPorts.four.portInfo1;
-            info2.textContent = data.medium.mediumPorts.four.portInfo2;
+            heading.textContent = mediumData.mediumPorts[3].name;
+            image.setAttribute("src", mediumData.mediumPorts[3].image);
+            image.setAttribute("alt", mediumData.mediumPorts[3].name);
+            imgDesc.textContent = mediumData.mediumPorts[3].imageDesc;
+            info1.textContent = mediumData.mediumPorts[3].portInfo1;
+            info2.textContent = mediumData.mediumPorts[3].portInfo2;
         }else if(largeChoice){
-            heading.textContent = large.largePorts.four.name;
-            image.setAttribute("src", large.largePorts.four.image);
-            image.setAttribute("alt", large.largePorts.four.name);
-            imgDesc.textContent = large.largePorts.four.imageDesc;
-            info1.textContent = large.largePorts.four.portInfo1;
-            info2.textContent = large.largePorts.four.portInfo2;
+            heading.textContent = largeData.largePorts[3].name;
+            image.setAttribute("src", largeData.largePorts[3].image);
+            image.setAttribute("alt", largeData.largePorts[3].name);
+            imgDesc.textContent = largeData.largePorts[3].imageDesc;
+            info1.textContent = largeData.largePorts[3].portInfo1;
+            info2.textContent = largeData.largePorts[3].portInfo2;
+        }
         }
     }
-});
+);
