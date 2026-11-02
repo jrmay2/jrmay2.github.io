@@ -474,3 +474,33 @@ footer p{
         padding: 10px;
     }
 }
+
+#change-password,
+#change-password-icon {
+    display: none;
+}
+
+#change-password.logged-in,
+#change-password-icon.logged-in {
+    display: block;
+}
+
+@media(max-width: 768px) {
+    #change-password.logged-in {
+        display: none;
+    }
+
+    #change-password-icon.logged-in {
+        display: block;
+    }
+}
+
+@media (min-width: 769px) {
+    #change-password.logged-in {
+        display: block;
+    }
+
+    #change-password-icon.logged-in {
+        display: none;
+    }
+}

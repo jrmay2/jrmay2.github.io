@@ -6,6 +6,7 @@ import { auth } from "./firebase.js";
 
 const authButton = document.querySelector("#auth-button");
 const passwordLink = document.querySelector("#change-password");
+const passwordIconLink = document.querySelector("#change-password-icon");
 
 onAuthStateChanged(auth, (user) => {
 
@@ -13,14 +14,16 @@ onAuthStateChanged(auth, (user) => {
         authButton.textContent = "Log Out";
 
         if (passwordLink) {
-            passwordLink.style.display = "block";
+            passwordLink.classList.add("logged-in");
+            passwordIconLink.classList.add("logged-in");
         }
 
     } else {
         authButton.textContent = "Sign Up/Login";
 
         if (passwordLink) {
-            passwordLink.style.display = "none";
+            passwordLink.classList.remove("logged-in");
+            passwordIconLink.classList.remove("logged-in");
         }
     }
 
