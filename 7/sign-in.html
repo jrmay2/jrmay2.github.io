@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="John May">
+    <meta name="description" content="This is the home page for the aviation industry information site.">
+    <meta name="keywords" content="aviation, airport, flight, airline, travel, industry">
+    <title>Project 5</title>
+    <link rel="icon" type="image/x-icon" href="img/airplane(1).png">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="header-block">
+            <h1>Aviation Industry</h1>
+        </div>
+        <nav>
+            <ul class="nav-list">
+                <li id="home"><a href="index.html" >Home</a></li>
+                <li id="home-icon"><a href="index.html" ><img src="img/home-icon-silhouette.png" alt="house icon"></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="sign-in-main">
+        <h2>Sign In</h2>
+        <form id="sign-in-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Sign In</button>
+            <p id="auth-message"></p>
+        </form>
+        <p><a href="sign-up.html">Don't have an account? Sign Up</a></p>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 John May. All rights reserved.</p>
+        <p><a href="https://www.flaticon.com" title="airplane mail magnifier home info icons" target="_blank">Favicon/Icon Credits</a></p>
+        <!-- <a href="https://www.flaticon.com/free-icons/info" title="info icons">Info icons created by Stockio - Flaticon</a> -->
+        <!-- <a href="https://www.flaticon.com/free-icons/search" title="search icons">Search icons created by Magnific - Flaticon</a> -->
+        <!-- <a href="https://www.flaticon.com/free-icons/email" title="email icons">Email icons created by Magnific - Flaticon</a> -->
+        <!-- <a href="https://www.flaticon.com/free-icons/home" title="home icons">Home icons created by Magnific - Flaticon</a> -->
+        <!-- <a href="https://www.flaticon.com/free-icons/airplane" title="airplane icons">Airplane icons created by meaicon - Flaticon</a> -->
+    </footer>
+    <script type="module" src="./js/firebase-auth.js"></script>
+</body>
+</html>

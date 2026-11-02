@@ -1,7 +1,7 @@
 'use strict';
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-app.js";
-import { getFirestore, collection, getDocs, getDoc, doc } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore-lite.js";
+import { db } from "./firebase.js";
+import { getDoc, doc } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-firestore-lite.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -12,10 +12,6 @@ const firebaseConfig = {
     messagingSenderId: "1054522318125",
     appId: "1:1054522318125:web:6b01b8dde65c23e7e747a4"
 };
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app);
 
 let sizeChosen = false;
 let nonhubChoice = false;

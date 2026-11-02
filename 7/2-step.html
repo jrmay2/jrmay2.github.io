@@ -14,7 +14,7 @@
     <header>
         <div class="header-block">
             <h1>Aviation Industry</h1>
-            <button>Sign Up/Login</button>
+            <button id="auth-button" type="button">Sign Up/Login</button>
         </div>
         <nav>
             <ul class="nav-list">
@@ -33,7 +33,8 @@
                 <li id="contact"><a href="contact.html" >Contact Us</a></li>
                 <li id="contact-icon"><a href="contact.html" ><img src="img/mail.png" alt="email icon"></a></li>
 
-
+                <li id="change-password"><a href="change-password.html">Change Password</a></li>
+                <li id="change-password-icon"><a href="change-password.html" ><img src="img/key.png" alt="key icon"></a></li>
             </ul>
         </nav>
     </header>
@@ -59,5 +60,7 @@
         <!-- <a href="https://www.flaticon.com/free-icons/airplane" title="airplane icons">Airplane icons created by meaicon - Flaticon</a> -->
     </footer>
     <script type="module" src="js/script.js"></script>
+    <script type="module" src="./js/auth-status.js"></script>
+    <script type="module" src="./js/auth-guard.js"></script>
 </body>
 </html>

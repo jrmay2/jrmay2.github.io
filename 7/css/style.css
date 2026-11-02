@@ -229,6 +229,27 @@ footer p{
     transition: background-color 0.3s ease;
 }
 
+.sign-in-main, .sign-up-main, .change-password-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    margin: 20px 0;
+}
+
+#sign-in-form, #sign-up-form, #change-password-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#sign-in-form label, #sign-up-form label, #sign-in-form input, #sign-up-form input, 
+#sign-in-form p, #sign-up-form p, #sign-in-form button, #sign-up-form button,
+#change-password-form label, #change-password-form input, #change-password-form p, #change-password-form button {
+    margin: 10px 0 5px;
+}
+
+
 @media (max-width: 425px) {
 
     .header-block{
@@ -293,15 +314,15 @@ footer p{
         width: 100%;
     }
 
-    #home, #static, #two-step, #contact {
+    #home, #static, #two-step, #contact, #change-password {
         display: none;
     }
 
-    #home-icon, #static-icon, #two-step-icon, #contact-icon {
+    #home-icon, #static-icon, #two-step-icon, #contact-icon, #change-password-icon {
         display: block;
     }
 
-    #home-icon img, #static-icon img, #two-step-icon img, #contact-icon img {
+    #home-icon img, #static-icon img, #two-step-icon img, #contact-icon img, #change-password-icon img {
         width: 25px;
         height: 25px;
     }
@@ -402,12 +423,28 @@ footer p{
         display: block;
     }
 
-    #home-icon, #static-icon, #two-step-icon, #contact-icon {
+    #home-icon, #static-icon, #two-step-icon, #contact-icon, #change-password-icon {
         display: none;
     }
 }
 
 @media (max-width: 768px) and (min-width: 426px) {
+    .static-desc-block {
+        text-align: center;
+    }
+
+    .static-desc-block p{
+        margin: 0 10px 10px 10px;
+    }
+
+    .static-img-block{
+        margin: 0 10px;
+    }
+
+    .static-img-block img{
+        width: 100%;
+    }
+
     .header-block{
         flex-direction: column;
         align-items: center;
@@ -419,15 +456,15 @@ footer p{
         margin: 10px 0;
     }
 
-    #home, #static, #two-step, #contact {
+    #home, #static, #two-step, #contact, #change-password {
         display: none;
     }
 
-    #home-icon, #static-icon, #two-step-icon, #contact-icon {
+    #home-icon, #static-icon, #two-step-icon, #contact-icon, #change-password-icon {
         display: block;
     }
 
-    #home-icon img, #static-icon img, #two-step-icon img, #contact-icon img {
+    #home-icon img, #static-icon img, #two-step-icon img, #contact-icon img, #change-password-icon img {
         width: 25px;
         height: 25px;
     }
