@@ -1,7 +1,7 @@
 
 import { auth } from "./firebase.js";
 
-import { EmailAuthProvider, reauthenticateWithCredential, updatePassword } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-auth.js";
+import { EmailAuthProvider, reauthenticateWithCredential, updatePassword } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 
 const changePasswordForm = document.querySelector("#change-password-form");
 const changePasswordButton = document.querySelector("#change-password-button");
