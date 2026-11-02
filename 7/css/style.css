@@ -196,8 +196,50 @@ footer p{
     
 }
 
+.header-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+.header-block h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.header-block button {
+    position: absolute;
+    right: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #f1f1f1;
+    color: black;
+    border: 2px solid #333;
+    border-top: 1px solid #58c2ff;
+    border-left: 1px solid #58c2ff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.header-block button:hover{
+    background-color: #968aff;
+    transition: background-color 0.3s ease;
+}
 
 @media (max-width: 425px) {
+
+    .header-block{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-block button {
+        position: static;
+        margin: 10px 0;
+    }
 
     .static-desc-block {
         text-align: center;
@@ -272,6 +314,11 @@ footer p{
 }
 
 @media (min-width: 426px) {
+
+    .header-block button{
+        align-self: flex-start;
+
+    }
 
     .static-info-group{
         display: flex;
@@ -357,5 +404,36 @@ footer p{
 
     #home-icon, #static-icon, #two-step-icon, #contact-icon {
         display: none;
+    }
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .header-block{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header-block button {
+        position: static;
+        align-self: center;
+        margin: 10px 0;
+    }
+
+    #home, #static, #two-step, #contact {
+        display: none;
+    }
+
+    #home-icon, #static-icon, #two-step-icon, #contact-icon {
+        display: block;
+    }
+
+    #home-icon img, #static-icon img, #two-step-icon img, #contact-icon img {
+        width: 25px;
+        height: 25px;
+    }
+
+    .nav-list li {
+        /* margin: 0px 10px; */
+        padding: 10px;
     }
 }
