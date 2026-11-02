@@ -43,7 +43,7 @@
         <h2>Contact Us</h2>
         <img src="img/sunnyAirport.jpg" alt="Sunny day at an airport" class="contact-image">
         <p>If you have any feedback regarding the content or further questions about aviation, please feel free to leave us your name, email, and a short message below. Thank you!</p>
-        <form action="contact.html">
+        <form id="contact-form">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" placeholder="John Smith" required><br><br>
 
@@ -55,7 +55,7 @@
 
             <input class="submit-btn" type="submit" value="Submit">
         </form>
-
+        <p id="contact-status"></p>
     </main>
 
     <footer>
@@ -69,5 +69,6 @@
     </footer>
     <script type="module" src="./js/auth-status.js"></script>
     <script type="module" src="./js/auth-guard.js"></script>
+    <script type="module" src="./js/contact.js"></script>
 </body>
 </html>

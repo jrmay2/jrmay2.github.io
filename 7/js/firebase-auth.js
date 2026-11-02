@@ -3,15 +3,6 @@
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/13.1.0/firebase-auth.js";
 import { auth } from "./firebase.js";
 
-const firebaseConfig = {
-    apiKey: "AIzaSyAyxaszGW2VDLQTuj0aJYzqJK7vca4HUno",
-    authDomain: "csci-3054-project.firebaseapp.com",
-    projectId: "csci-3054-project",
-    storageBucket: "csci-3054-project.firebasestorage.app",
-    messagingSenderId: "1054522318125",
-    appId: "1:1054522318125:web:6b01b8dde65c23e7e747a4"
-};
-
 // Sign Up
 const signUpForm = document.querySelector("#sign-up-form");
 
